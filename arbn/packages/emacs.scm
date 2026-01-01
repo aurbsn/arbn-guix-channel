@@ -9,7 +9,7 @@
 (define-public emacs-minuet
   (package
     (name "emacs-minuet")
-    (version "0.6.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
