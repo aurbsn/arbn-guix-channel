@@ -7,46 +7,27 @@
   #:use-module (gnu packages emacs-xyz)
   #:use-module (gnu packages emacs-build))
 
-(define-public emacs-minuet
-  (package
-    (name "emacs-minuet")
-    (version "0.7.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (string-append "https://elpa.gnu.org/packages/minuet-" version
-                           ".tar"))
-       (sha256
-        (base32 "1vpq6jsmw93hssla13dkf2ff13sv11fbjaq7wmrybnc4vnyfkycz"))))
-    (build-system emacs-build-system)
-    (propagated-inputs (list emacs-plz emacs-dash))
-    (home-page "https://github.com/milanglacier/minuet-ai.el")
-    (synopsis "Code completion using LLM")
-    (description
-     "Minuet brings the grace and harmony of a minuet to your coding process. Just as dancers move during a minuet.")
-    (license license:gpl3+)))
-
 (define-public emacs-guru-mode
   (package
-    (name "emacs-guru-mode")
-    (version "1.0")
-    (source
-     (origin
-       (method git-fetch)
-       (uri (git-reference
-             (url "https://github.com/bbatsov/guru-mode")
-             (commit (string-append "v" version))))
-       (file-name (git-file-name name version))
-       (sha256
-        (base32 "1ja98di2iwjp0l4ndh22pwm7s56753kmz255xlv6vni2ai4rf8sm"))))
-    (build-system emacs-build-system)
-    (home-page "https://github.com/bbatsov/guru-mode")
-    (synopsis "Learn idiomatic Emacs keybindings")
-    (description
-     "Guru mode promotes the use of idiomatic keybindings for essential
+   (name "emacs-guru-mode")
+   (version "1.0")
+   (source
+    (origin
+     (method git-fetch)
+     (uri (git-reference
+           (url "https://github.com/bbatsov/guru-mode")
+           (commit (string-append "v" version))))
+     (file-name (git-file-name name version))
+     (sha256
+      (base32 "1ja98di2iwjp0l4ndh22pwm7s56753kmz255xlv6vni2ai4rf8sm"))))
+   (build-system emacs-build-system)
+   (home-page "https://github.com/bbatsov/guru-mode")
+   (synopsis "Learn idiomatic Emacs keybindings")
+   (description
+    "Guru mode promotes the use of idiomatic keybindings for essential
 editing commands.  It can either warn when an alternative binding such as an
 arrow key is used, or disallow those bindings outright.")
-    (license license:gpl3+)))
+   (license license:gpl3+)))
 
 (define-public emacs-sly-repl-ansi-color
   (let ((commit "b9cd52d1cf927bf7e08582d46ab0bcf1d4fb5048")
